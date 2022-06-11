@@ -2,17 +2,15 @@
 #include "include/person.hpp"
 
 
-person::person(std::string id, std::string nama, int dd, int mm, int yy)
-		: id(id), nama(nama), dd(dd), mm(mm), yy(yy)
-{
-}
+person::person(int id, std::string nama, int dd, int mm, int yy)
+		: id(id), nama(nama), dd(dd), mm(mm), yy(yy){}
 
-void person::setId(std::string id)
+void person::setId(int id)
 {
 	this->id = id;
 }
 
-std::string person::getId() 
+int person::getId() 
 {
 	return this->id;
 }
@@ -48,6 +46,3 @@ int person::getTahunLahir()
 {
 	return this->yy;
 }
-
-
-

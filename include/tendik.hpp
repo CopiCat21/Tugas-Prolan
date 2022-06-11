@@ -11,14 +11,11 @@ private:
 	std::string unit;
 
 public:
-	tendik(std::string id, std::string nama, int dd, int mm, int yy, std::string npp, std::string unit);
-
-	void setNPP(std::string npp);
-	std::string getNPP();
+	tendik(int id, std::string nama, int dd, int mm, int yy, std::string npp, std::string unit);
 
 	void setUnit(std::string unit);
-	std::string getUnit();
-		
+	std::string getUnit();	
+	std::string getNPP();	
 };
 
 #endif

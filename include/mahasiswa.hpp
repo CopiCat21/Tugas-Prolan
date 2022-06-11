@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "include/person.hpp"
+#include "include/matkul.hpp"
 
 class mahasiswa : public person {
 private:
@@ -14,20 +15,22 @@ private:
 	int skslulus;
 	float ipk;
 	std::vector<float> ips;
+	std::vector<std::string>matkul;
 
 public:
-	mahasiswa(std::string id, std::string nama, int dd, int mm, int yy,
+	mahasiswa(int id, std::string nama, int dd, int mm, int yy,
 					std::string nrp, std::string departemen, int tahunmasuk,
-						int semesterke, int skslulus);
+						int semsterke);
 
-	void setNrp(std::string nrp);
-	std::string getNrp();
-
+	void setNRP(std::string nrp);
+	std::string getNRP();
+	
 	void setDepartemen(std::string departemen);
 	std::string getDepartemen();
 
-	void setTahunmasuk(int tahunmasuk);
-	int getTahunmasuk();
+	void setTahunMasuk(int tahunmasuk);
+	int getTahunMasuk();
+
 
 	void setSemester(int semesterke);
 	int getSemester();
@@ -40,6 +43,9 @@ public:
 	void setIPS(int semester, float ips);
 	float getIPS(int semester);
 	std::vector<float> getAllIPS();
+
+	void tambahmatkul(std::string id);
+	std::vector<std::string> getmatkul();
 };
 
 #endif

@@ -5,15 +5,15 @@
 
 class person {
 private:
-	std::string id;
+	int id;
 	std::string nama;
 	int dd, mm, yy;
 
 public:
-	person(std::string id, std::string nama, int dd, int mm, int yy);
+	person(int id, std::string nama, int dd, int mm, int yy);
 
-	void setId(std::string id);
-	std::string getId();
+	void setId(int id);
+	int getId();
 
 	void setNama(std::string nama);
 	std::string getNama();

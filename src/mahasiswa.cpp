@@ -1,46 +1,37 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include "include/mahasiswa.hpp"
 
 
-mahasiswa::mahasiswa(std::string id, std::string nama, int dd, int mm, int yy, 
-				std::string nrp, std::string departemen, int tahunmasuk,
-					int semesterke, int skslulus)
-		: person(id, nama, dd, mm, yy), nrp(nrp), departemen(departemen), tahunmasuk(tahunmasuk), 
-			semesterke(semesterke), skslulus(skslulus)
+mahasiswa::mahasiswa(int id, std::string nama, int dd, int mm, int yy, 
+				std::string nrp, std::string departemen, int tahunmasuk, int semesterke)
+		: person(id, nama, dd, mm, yy), nrp(nrp), departemen(departemen), tahunmasuk(tahunmasuk), semesterke(semesterke)
 {
 	this->ipk = 0.0;
+	
 
 	this->ips = std::vector<float>(14,0);
 }
 
-void mahasiswa::setNrp(std::string nrp)
-{
+void mahasiswa::setNRP(std::string nrp){
 	this->nrp = nrp;
 }
-
-std::string mahasiswa::getNrp()
-{
-	return this->nrp;
+std::string mahasiswa::getNRP(){
+		return this->nrp;
 }
 
-void mahasiswa::setDepartemen(std::string departemen)
-{
+void mahasiswa::setDepartemen(std::string departemen){
 	this->departemen = departemen;
 }
-
-std::string mahasiswa::getDepartemen()
-{
+std::string mahasiswa::getDepartemen(){
 	return this->departemen;
 }
 
-void mahasiswa::setTahunmasuk(int tahunmasuk)
-{
+void mahasiswa::setTahunMasuk(int tahunmasuk){
 	this->tahunmasuk = tahunmasuk;
 }
-
-int mahasiswa::getTahunmasuk()
-{
+int mahasiswa::getTahunMasuk(){
 	return this->tahunmasuk;
 }
 
@@ -48,7 +39,6 @@ void mahasiswa::setSemester(int semesterke)
 {
 	this->semesterke = semesterke;
 }
-
 int mahasiswa::getSemester()
 {
 	return this->semesterke;
@@ -58,14 +48,9 @@ void mahasiswa::setSKSLulus(int skslulus)
 {
 	this->skslulus = skslulus;
 }
-
 int mahasiswa::getSKSLulus()
 {
 	return this->skslulus;
-}
-
-void mahasiswa::hitungIPK()
-{
 }
 
 void mahasiswa::setIPS(int semester, float ips)
@@ -73,7 +58,6 @@ void mahasiswa::setIPS(int semester, float ips)
 	// semester mulai dari 1
 	if (semester < 15) {
 		this->ips[semester-1] = ips;
-		this->hitungIPK();
 	}
 }
 
